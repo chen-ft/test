@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Q&A问答</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../home/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- lunt Css -->
+    <link href="../home/lunt/css/screen.css" rel="stylesheet">
+    <link href="../home/lunt/css/common.css" rel="stylesheet">
+    <link href="../home/lunt/css/icon.css" rel="stylesheet">
+    <link href="../home/lunt/css/link.css" rel="stylesheet">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- start navigation -->
+    <div class="aw-top-menu-wrap">
+		<div class="container">
+			<!-- logo -->
+			<div class="aw-logo">
+				<a href="http://wenda.ghostchina.com"></a>
+			</div>
+			<!-- end logo -->
+			<!-- 搜索框 -->
+			<div class="aw-search-box  hidden-xs hidden-sm">
+				<form class="navbar-search" action="http://wenda.ghostchina.com/search/" id="global_search_form" method="post">
+					<input class="form-control search-query" type="text" placeholder="搜索问题、话题或人" autocomplete="off" name="q" id="aw-search-query">
+					<span title="搜索" id="global_search_btns" onclick="$('#global_search_form').submit();"><i class="icon icon-search"></i></span>
+					<div class="aw-dropdown">
+						<div class="mod-body">
+							<p class="title">输入关键字进行搜索</p>
+							<ul class="aw-dropdown-list hide"></ul>
+							<p class="search"><span>搜索:</span><a onclick="$('#global_search_form').submit();"></a></p>
+						</div>
+						<div class="mod-footer">
+							<a href="" onclick="$('#header_publish').click();" class="pull-right btn btn-mini btn-success publish">发起问题</a>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- end 搜索框 -->
+			<!-- 导航 -->
+			<div class="aw-top-nav navbar">
+				<nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+			      <ul class="nav navbar-nav">
+			      	<li><a href="" >动态</a></li>
+
+					<li><a href="" class="">问题</a></li>
+
+					<li><a href="" class="">文章</a></li> 
+
+					<li><a href=""><i class="fa"></i> 话题</a></li>
+
+				  </ul>
+			    </nav>
+			</div>
+			<!-- end 导航 -->
+			<!-- 用户栏 -->
+			<div class="aw-user-nav">
+				<!-- 登陆&注册栏 -->
+					<span>
+						<a class="register btn btn-normal btn-success" href="http://wenda.ghostchina.com/account/register/">注册</a>
+						<a class="login btn btn-normal btn-primary" href="http://wenda.ghostchina.com/login/">登录</a>
+					</span>
+				<!-- end 登陆&注册栏 -->
+			</div>
+			<!-- end 用户栏 -->
+			<!-- 发起 -->
+		</div>
+	</div>
+    <!-- end navigation -->
+    <!--container -->
+	<div class="aw-container-wrap">
+	  <div class="container">
+	    <div class="row">
+	      <div class="aw-content-wrap clearfix">
+	        <div class="col-sm-12 col-md-9 main-content">
+	           <!-- 新消息通知 -->
+	          <div class="aw-mod aw-notification-box hide" id="index_notification">
+	          	<div class="mod-head common-head">
+	          		<h2>
+	          			<span class="pull-right"><a href="http://wenda.ghostchina.com/setting/privacy/#notifications" class="text-color-999"><i class="icon icon-setting"></i> 通知设置</a></span>
+	          			<i class="icon icon-bell"></i>新通知<em class="badge badge-important" name="notification_unread_num"></em>
+	          		</h2>
+	          	</div>
+	          	<div class="mod-body">
+	          		<ul id="notification_list"></ul>
+	          	</div>
+	          	<div class="mod-footer clearfix">
+	          		<a href="javascript:;" onclick="AWS.Message.read_notification(false, 0, false);" class="pull-left btn btn-mini btn-gray">我知道了</a>
+	          		<a href="http://wenda.ghostchina.com/notifications/" class="pull-right btn btn-mini btn-success">查看所有</a>
+	          	</div>
+	          </div>
+	          <!-- end 新消息通知 -->
+	          <!-- tab切换 -->
+	          <ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
+	          	<li><a href="http://wenda.ghostchina.com/sort_type-unresponsive">等待回复</a></li>
+	          	<li><a href="http://wenda.ghostchina.com/sort_type-hot__day-7" id="sort_control_hot">热门</a></li>
+	          	<li><a href="http://wenda.ghostchina.com/is_recommend-1">推荐</a></li>
+	          	<li class="active"><a href="">最新</a></li>
+	          	<h2 class="hidden-xs"><i class="fa fa-list-ul"></i> 动态</h2>
+	          </ul>
+	          <!-- end tab切换 -->
+	          <!-- 问答列表 -->
+	          <div class="aw-mod aw-explore-list">
+	            <div class="mod-body">
+	              <div class="aw-common-list">
+	              	<div class="aw-item " data-topic-id="">
+	              		<a class="aw-user-name hidden-xs" data-id="457" href="http://wenda.ghostchina.com/people/%E7%9F%B3%E5%8F%A4%E5%AD%90" rel="nofollow"><img src="http://wenda.ghostchina.com/uploads/avatar/000/00/04/57_avatar_max.jpg" alt="" /></a> 
+	              		<div class="aw-question-content">
+	              		    <span>来自话题•   <a class="aw-question-tags" href="http://wenda.ghostchina.com/explore/category-1">默认分类</a></span>  
+	              		    <div class="pull-right aw-feed-list">
+	              				<span class="operate">
+	              					<a class="aw-add-comment">
+	              						<i class="fa fa-thumbs-o-up " data-placement="right" title="" data-toggle="tooltip" data-original-title="赞同回复"></i>
+	              						<b class="count">10</b>
+	              					</a>
+	              				</span>
+	              			</div>
+	              			<h4>
+	              				<a href="http://wenda.ghostchina.com/question/208">一直安装困难 请给个一键安装包吧</a>
+	              			</h4>
+	              				
+	              			<p>
+	              			    <a href="http://wenda.ghostchina.com/people/ghostchina" class="aw-user-name" data-id="1309">某火山</a> •                  
+	              				<small>魔法系高材生</samll>
+	              			</p>
+	              			<div class="media">
+	              				<div class="media-left">
+	              					<a href="#">
+	              						<img class="media-object" src="images/12.png" alt="...">
+	              					</a>
+	              				</div>
+	              				<div class="media-body">
+	              					p昨天朋友发了我一份行业的竞品分析报告,一看特别的熟悉,因为大部分内容就是我写的,连PPT的模板都和我之前的一样,但现在它已经贴上了别人的logo,成为了别人的东西。我非常的生气,但那又怎么样,知识这东西,谁都能写,你无法证明,特别是豪华品牌里,安全性大家都差不多。我想说,错啦!!!沃尔沃就是最安全的...
+	              					<a href="">显示全部</a>
+	              				</div>
+	              			</div>
+	              			<p style="margin-top: 8px">
+	              			    <a data-id="208" data-type="question" class="aw-add-comment text-color-999" data-comment-count="0" data-first-click="hide"><i class="fa fa-plus"></i> 添加关注</a>
+	              				•                  <a data-id="208" data-type="question" class="aw-add-comment text-color-999" data-comment-count="0" data-first-click="hide"><i class="fa fa-comment-o"></i>745条评论</a>
+	              				<span class="text-color-999"> • 作者保留权利 </span>
+	              			</p>
+	              		</div>
+	              	 </div>
+	               </div>
+	            </div>
+	          </div>
+	          <!-- end 问答列表 -->
+	        </div>
+	        <div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm">
+	           <div class="aw-mod aw-text-align-justify">
+	           	  <div class="mod-head">
+	           	  	 话题标签
+	           	  </div>
+	           	  <div class="mod-body">
+	           	  	 
+	           	  </div>
+	           </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!--end container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../home/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="../home/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  </body>
+</html>
