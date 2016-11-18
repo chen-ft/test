@@ -1,9 +1,0 @@
-.time{height: 100px}
-.myTimeline{width:100%;height:30px;padding:0;list-style:none;position: relative;}
-.myTimeline:before{content:'';position:absolute;top:0;bottom:0;height:4px;background:#ddd;width: 100%;top:13px;margin:0;border-radius:2px}
-.myTimeline>li{position:relative;margin-left:6%;float:left;}
-.myTimeline>li:before,.myTimeline>li:after{content:" ";display:table}
-.myTimeline>li:after{clear:both}
-/*.myTimeline>li>{width:30px;height:30px;font-size:15px;line-height:30px;position:absolute;color:#666;background:#d2d6de;border-radius:50%;text-align:center;left:0;top:0}*/
-/*.myTimeline>.time-label{left:18%;}*/
-.myTimeline>.time-label>span{font-weight:600;display:inline-block;width:95px;height:30px;border-radius:4px;color:#fff;text-align:center;line-height:30px;}
