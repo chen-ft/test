@@ -58,9 +58,9 @@ select {
 .table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
     border-bottom-width: 1px;
 }
-.modal-backdrop, .modal-backdrop.fade.in {
-    opacity: 0.2;
-}
+/*  .modal-backdrop, .modal-backdrop{
+   opacity: 0.2;
+} */
 .btn:active, .btn.active {
     box-shadow: none;
 }
@@ -735,7 +735,7 @@ a.aw-load-more-content {
     min-height: 50px;
     position: relative;
     width: 100%;
-    z-index: 1001;
+    /* z-index: 3; */
 }
 .aw-container-wrap {
     margin-top: 30px;
@@ -2856,17 +2856,17 @@ a.aw-load-more-content {
 .aw-tips-box .modal-dialog, .aw-confirm-box .modal-dialog {
     width: 370px;
 }
-.aw-tips-box .modal-body {
+.aw-tips-box /*.modal-body*/ {
     background: rgba(0, 0, 0, 0) url("img/warmming.png") no-repeat scroll right 5px;
 }
-.aw-tips-box .modal-body p {
+.aw-tips-box /*.modal-body*/ p {
     margin: 10px 0;
 }
-.aw-alert-img-box .modal-body {
+.aw-alert-img-box /*.modal-body*/ {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     text-align: center;
 }
-.aw-alert-img-box .modal-body img {
+.aw-alert-img-box /*.modal-body*/ img {
     max-width: 328px;
 }
 .aw-inbox .aw-dropdown {
@@ -2875,7 +2875,7 @@ a.aw-load-more-content {
 .aw-publish-box input {
     width: 170px !important;
 }
-.aw-publish-box .modal-body {
+.aw-publish-box /*.modal-body*/ {
     padding-bottom: 0;
 }
 .aw-publish-box #qp_captcha {
@@ -2901,7 +2901,7 @@ a.aw-load-more-content {
 .aw-edit-comment-box .modal-dialog {
     width: 745px;
 }
-.aw-edit-comment-box .modal-body textarea {
+.aw-edit-comment-box /*.modal-body*/ textarea {
     border-radius: 10px 10px 0 0;
     margin: 0;
 }
